@@ -45,7 +45,6 @@ int main() {
 
     while (true) {
 
-        // Nome obrigatório
         do {
             printf("\nNome do paciente: ");
             fgets(nome, sizeof(nome), stdin);
@@ -58,11 +57,10 @@ int main() {
 
         idade = lerInt("Idade: ");
 
-        // Escolha do sexo
         do {
             printf("Sexo (1-Masculino / 2-Feminino / 3-Outro): ");
             scanf("%d", &opcaoSexo);
-            getchar(); // limpa buffer do teclado
+            getchar();
 
             if (opcaoSexo == 1) strcpy(sexo, "Masculino\n");
             else if (opcaoSexo == 2) strcpy(sexo, "Feminino\n");
@@ -74,13 +72,11 @@ int main() {
         peso = lerFloat("Peso (kg): ");
         altura = lerFloat("Altura (m): ");
 
-        // Campos obrigatórios de texto
         do {
             printf("\nHistórico alimentar:\n> ");
             fgets(historico, sizeof(historico), stdin);
         } while (strlen(historico) <= 1);
 
-        // Campos opcionais
         printf("\nDoenças preexistentes (vazio = nenhuma):\n> ");
         fgets(doencas, sizeof(doencas), stdin);
 
@@ -100,7 +96,6 @@ int main() {
             fgets(objetivos, sizeof(objetivos), stdin);
         } while (strlen(objetivos) <= 1);
 
-        // Resumo final
         printf("\n=== RESUMO DA ANAMNESE ===\n");
         printf("Nome: %s\n", nome);
         printf("Idade: %d\n", idade);
